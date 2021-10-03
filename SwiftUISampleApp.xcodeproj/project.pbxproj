@@ -16,6 +16,8 @@
 		4A3F2BA826FBE78300ED6199 /* SwiftUISampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F2BA726FBE78300ED6199 /* SwiftUISampleAppUITestsLaunchTests.swift */; };
 		4A4D84262709BAB000269D97 /* SearchRepository.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4A4D84252709BAB000269D97 /* SearchRepository.graphql */; };
 		4A4D84282709BE7800269D97 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D84272709BE7800269D97 /* API.swift */; };
+		4A4D842B2709C8C400269D97 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D842A2709C8C300269D97 /* Request.swift */; };
+		4A4D842F2709E08200269D97 /* SearchRepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D842E2709E08200269D97 /* SearchRepositoryRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		4A3F2BA726FBE78300ED6199 /* SwiftUISampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4A4D84252709BAB000269D97 /* SearchRepository.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SearchRepository.graphql; sourceTree = "<group>"; };
 		4A4D84272709BE7800269D97 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		4A4D842A2709C8C300269D97 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		4A4D842E2709E08200269D97 /* SearchRepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryRequest.swift; sourceTree = "<group>"; };
 		4AEBE4D52701503000D50A13 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,9 +103,9 @@
 		4A3F2B8926FBE77F00ED6199 /* SwiftUISampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				4A4D84292709C60800269D97 /* API */,
 				4A3F2B8A26FBE77F00ED6199 /* SwiftUISampleAppApp.swift */,
 				4A3F2B8C26FBE77F00ED6199 /* ContentView.swift */,
-				4A4D84272709BE7800269D97 /* API.swift */,
 				4A3F2B8E26FBE78200ED6199 /* Assets.xcassets */,
 				4AEBE4D52701503000D50A13 /* schema.json */,
 				4A4D84252709BAB000269D97 /* SearchRepository.graphql */,
@@ -133,6 +137,16 @@
 				4A3F2BA726FBE78300ED6199 /* SwiftUISampleAppUITestsLaunchTests.swift */,
 			);
 			path = SwiftUISampleAppUITests;
+			sourceTree = "<group>";
+		};
+		4A4D84292709C60800269D97 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4A4D84272709BE7800269D97 /* API.swift */,
+				4A4D842A2709C8C300269D97 /* Request.swift */,
+				4A4D842E2709E08200269D97 /* SearchRepositoryRequest.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,8 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A3F2B8D26FBE77F00ED6199 /* ContentView.swift in Sources */,
+				4A4D842B2709C8C400269D97 /* Request.swift in Sources */,
 				4A4D84282709BE7800269D97 /* API.swift in Sources */,
 				4A3F2B8B26FBE77F00ED6199 /* SwiftUISampleAppApp.swift in Sources */,
+				4A4D842F2709E08200269D97 /* SearchRepositoryRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
