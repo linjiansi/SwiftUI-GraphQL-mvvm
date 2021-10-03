@@ -19,6 +19,7 @@
 		4A4D842B2709C8C400269D97 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D842A2709C8C300269D97 /* Request.swift */; };
 		4A4D842F2709E08200269D97 /* SearchRepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D842E2709E08200269D97 /* SearchRepositoryRequest.swift */; };
 		4A78AD542709E8D9008A8818 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 4A78AD532709E8D9008A8818 /* Apollo */; };
+		4A78AD562709EABC008A8818 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A78AD552709EABC008A8818 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4A4D84272709BE7800269D97 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4A4D842A2709C8C300269D97 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		4A4D842E2709E08200269D97 /* SearchRepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryRequest.swift; sourceTree = "<group>"; };
+		4A78AD552709EABC008A8818 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4AEBE4D52701503000D50A13 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				4A4D84272709BE7800269D97 /* API.swift */,
 				4A4D842A2709C8C300269D97 /* Request.swift */,
 				4A4D842E2709E08200269D97 /* SearchRepositoryRequest.swift */,
+				4A78AD552709EABC008A8818 /* APIClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				4A4D84282709BE7800269D97 /* API.swift in Sources */,
 				4A3F2B8B26FBE77F00ED6199 /* SwiftUISampleAppApp.swift in Sources */,
 				4A4D842F2709E08200269D97 /* SearchRepositoryRequest.swift in Sources */,
+				4A78AD562709EABC008A8818 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
