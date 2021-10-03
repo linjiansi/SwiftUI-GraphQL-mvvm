@@ -18,6 +18,12 @@ public protocol Request {
 }
 
 extension Request {
+
+    var url: URL? {
+        let urlString = "https://api.github.com/graphql"
+        return URL(string: urlString)
+    }
+
     var headers: [String: String] {
         return [:]
     }
