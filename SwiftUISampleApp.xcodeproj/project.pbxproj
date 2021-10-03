@@ -18,6 +18,7 @@
 		4A4D84282709BE7800269D97 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D84272709BE7800269D97 /* API.swift */; };
 		4A4D842B2709C8C400269D97 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D842A2709C8C300269D97 /* Request.swift */; };
 		4A4D842F2709E08200269D97 /* SearchRepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D842E2709E08200269D97 /* SearchRepositoryRequest.swift */; };
+		4A78AD542709E8D9008A8818 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 4A78AD532709E8D9008A8818 /* Apollo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A78AD542709E8D9008A8818 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +89,7 @@
 				4A3F2B9A26FBE78300ED6199 /* SwiftUISampleAppTests */,
 				4A3F2BA426FBE78300ED6199 /* SwiftUISampleAppUITests */,
 				4A3F2B8826FBE77F00ED6199 /* Products */,
+				4A78AD502709E87E008A8818 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +152,13 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		4A78AD502709E87E008A8818 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +176,9 @@
 			dependencies = (
 			);
 			name = SwiftUISampleApp;
+			packageProductDependencies = (
+				4A78AD532709E8D9008A8818 /* Apollo */,
+			);
 			productName = SwiftUISampleApp;
 			productReference = 4A3F2B8726FBE77F00ED6199 /* SwiftUISampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -669,6 +682,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A78AD532709E8D9008A8818 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AEBE4D22700AAAC00D50A13 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A3F2B7F26FBE77F00ED6199 /* Project object */;
 }
