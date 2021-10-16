@@ -120,11 +120,8 @@
 			children = (
 				4A4D84292709C60800269D97 /* API */,
 				4AA4A062271B20CE00478349 /* Extensions */,
+				4AA4A069271B52CB00478349 /* Screen */,
 				4A3F2B8A26FBE77F00ED6199 /* SwiftUISampleAppApp.swift */,
-				4A78AD5B2709F962008A8818 /* SearchRepositoryViewModel.swift */,
-				4A3F2B8C26FBE77F00ED6199 /* SearchRepositoryView.swift */,
-				4AE4F6DF271A913B0007C301 /* RepositoryView.swift */,
-				4AA5794427172FF700C72CFA /* WebView.swift */,
 				4A3F2B8E26FBE78200ED6199 /* Assets.xcassets */,
 				4AEBE4D52701503000D50A13 /* schema.json */,
 				4A4D84252709BAB000269D97 /* SearchRepository.graphql */,
@@ -183,6 +180,33 @@
 				4AA4A063271B20E700478349 /* Color+hex.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4AA4A069271B52CB00478349 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				4AA4A06A271B52F300478349 /* SearchRepository */,
+				4AA4A06B271B530700478349 /* WebView */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		4AA4A06A271B52F300478349 /* SearchRepository */ = {
+			isa = PBXGroup;
+			children = (
+				4A78AD5B2709F962008A8818 /* SearchRepositoryViewModel.swift */,
+				4A3F2B8C26FBE77F00ED6199 /* SearchRepositoryView.swift */,
+				4AE4F6DF271A913B0007C301 /* RepositoryView.swift */,
+			);
+			path = SearchRepository;
+			sourceTree = "<group>";
+		};
+		4AA4A06B271B530700478349 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				4AA5794427172FF700C72CFA /* WebView.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
