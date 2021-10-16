@@ -19,8 +19,13 @@ struct APIClient {
 
         let store = ApolloStore(cache: InMemoryNormalizedCache())
 
+        let interceptorProvider = NetworkInterceptorProvider(
+            store: store,
+            client: .init()
+        )
+
         let networkTransport = RequestChainNetworkTransport(
-            interceptorProvider: DefaultInterceptorProvider(store: store),
+            interceptorProvider: interceptorProvider,
             endpointURL: item.url!,
             additionalHeaders: item.headers
         )

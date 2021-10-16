@@ -75,12 +75,14 @@ public final class SearchRepositoryQuery: GraphQLQuery {
             name
             nameWithOwner
             description
+            stargazerCount
             owner {
               __typename
               avatarUrl
             }
             primaryLanguage {
               __typename
+              color
               name
             }
           }
@@ -252,8 +254,8 @@ public final class SearchRepositoryQuery: GraphQLQuery {
           return Node(unsafeResultMap: ["__typename": "User"])
         }
 
-        public static func makeRepository(id: GraphQLID, url: String, name: String, nameWithOwner: String, description: String? = nil, owner: AsRepository.Owner, primaryLanguage: AsRepository.PrimaryLanguage? = nil) -> Node {
-          return Node(unsafeResultMap: ["__typename": "Repository", "id": id, "url": url, "name": name, "nameWithOwner": nameWithOwner, "description": description, "owner": owner.resultMap, "primaryLanguage": primaryLanguage.flatMap { (value: AsRepository.PrimaryLanguage) -> ResultMap in value.resultMap }])
+        public static func makeRepository(id: GraphQLID, url: String, name: String, nameWithOwner: String, description: String? = nil, stargazerCount: Int, owner: AsRepository.Owner, primaryLanguage: AsRepository.PrimaryLanguage? = nil) -> Node {
+          return Node(unsafeResultMap: ["__typename": "Repository", "id": id, "url": url, "name": name, "nameWithOwner": nameWithOwner, "description": description, "stargazerCount": stargazerCount, "owner": owner.resultMap, "primaryLanguage": primaryLanguage.flatMap { (value: AsRepository.PrimaryLanguage) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -287,6 +289,7 @@ public final class SearchRepositoryQuery: GraphQLQuery {
               GraphQLField("name", type: .nonNull(.scalar(String.self))),
               GraphQLField("nameWithOwner", type: .nonNull(.scalar(String.self))),
               GraphQLField("description", type: .scalar(String.self)),
+              GraphQLField("stargazerCount", type: .nonNull(.scalar(Int.self))),
               GraphQLField("owner", type: .nonNull(.object(Owner.selections))),
               GraphQLField("primaryLanguage", type: .object(PrimaryLanguage.selections)),
             ]
@@ -298,8 +301,8 @@ public final class SearchRepositoryQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(id: GraphQLID, url: String, name: String, nameWithOwner: String, description: String? = nil, owner: Owner, primaryLanguage: PrimaryLanguage? = nil) {
-            self.init(unsafeResultMap: ["__typename": "Repository", "id": id, "url": url, "name": name, "nameWithOwner": nameWithOwner, "description": description, "owner": owner.resultMap, "primaryLanguage": primaryLanguage.flatMap { (value: PrimaryLanguage) -> ResultMap in value.resultMap }])
+          public init(id: GraphQLID, url: String, name: String, nameWithOwner: String, description: String? = nil, stargazerCount: Int, owner: Owner, primaryLanguage: PrimaryLanguage? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Repository", "id": id, "url": url, "name": name, "nameWithOwner": nameWithOwner, "description": description, "stargazerCount": stargazerCount, "owner": owner.resultMap, "primaryLanguage": primaryLanguage.flatMap { (value: PrimaryLanguage) -> ResultMap in value.resultMap }])
           }
 
           public var __typename: String {
@@ -357,6 +360,16 @@ public final class SearchRepositoryQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "description")
+            }
+          }
+
+          /// Returns a count of how many stargazers there are on this object
+          public var stargazerCount: Int {
+            get {
+              return resultMap["stargazerCount"]! as! Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "stargazerCount")
             }
           }
 
@@ -430,6 +443,7 @@ public final class SearchRepositoryQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                GraphQLField("color", type: .scalar(String.self)),
                 GraphQLField("name", type: .nonNull(.scalar(String.self))),
               ]
             }
@@ -440,8 +454,8 @@ public final class SearchRepositoryQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(name: String) {
-              self.init(unsafeResultMap: ["__typename": "Language", "name": name])
+            public init(color: String? = nil, name: String) {
+              self.init(unsafeResultMap: ["__typename": "Language", "color": color, "name": name])
             }
 
             public var __typename: String {
@@ -450,6 +464,16 @@ public final class SearchRepositoryQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
+              }
+            }
+
+            /// The color defined for the current language.
+            public var color: String? {
+              get {
+                return resultMap["color"] as? String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "color")
               }
             }
 
