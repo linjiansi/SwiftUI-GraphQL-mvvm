@@ -25,7 +25,7 @@ class SearchRepositoryViewModel: ObservableObject {
         }
     }
 
-    @Published public var repositories: [SearchRepositoryRequst.Query.Data.Search.Node] = []
+    @Published private(set) var repositories: [SearchRepositoryRequst.Query.Data.Search.Node] = []
 
     private let searchSubject = PassthroughSubject<String, Never>()
     private var searchCencellable: AnyCancellable? {
@@ -44,7 +44,8 @@ class SearchRepositoryViewModel: ObservableObject {
                     request: SearchRepositoryRequst(
                         query: SearchRepositoryQuery(
                             type: .repository,
-                            query: searchText
+                            query: searchText,
+                            first: 20
                         )
                     )
                 ) { [weak self] result in
