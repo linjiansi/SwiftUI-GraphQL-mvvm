@@ -8,10 +8,12 @@ query SearchRepository($type: SearchType!, $query: String!, $first: Int, $after:
         name
         nameWithOwner
         description
+        stargazerCount
         owner {
           avatarUrl
         }
         primaryLanguage {
+          color
           name
         }
       }
