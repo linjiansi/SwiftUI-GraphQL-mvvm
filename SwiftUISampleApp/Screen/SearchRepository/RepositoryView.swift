@@ -32,6 +32,7 @@ struct RepositoryView: View {
             }
 
             Text("\(repository.description ?? "")")
+                .fixedSize(horizontal: false, vertical: true)
 
             HStack {
                 Image(systemName: "star")
