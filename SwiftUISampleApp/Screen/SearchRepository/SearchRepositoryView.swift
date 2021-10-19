@@ -13,28 +13,34 @@ struct SearchRepositoryView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.repositories, id: \.asRepository?.id) { repository in
-                    if
-                        let urlString = repository.asRepository?.url,
-                        let url = URL(string: urlString) {
-                        NavigationLink(
-                            destination: WebView(url: url)
-                                .navigationBarTitleDisplayMode(.inline)
+            VStack {
+                Spacer()
+                    .frame(height: 10)
 
-                        ) {
-                            RepositoryView(repository: repository.asRepository!)
+                List {
+                    ForEach(viewModel.repositories, id: \.asRepository?.id) { repository in
+                        if
+                            let urlString = repository.asRepository?.url,
+                            let url = URL(string: urlString) {
+                            NavigationLink(
+                                destination: WebView(url: url)
+                                    .navigationBarTitleDisplayMode(.inline)
+
+                            ) {
+                                RepositoryView(repository: repository.asRepository!)
+                            }
                         }
                     }
                 }
+                .listStyle(.plain)
+                .navigationTitle("Search Repository")
+                .searchable(
+                    text: $viewModel.searchText,
+                    placement: .sidebar,
+                    prompt: "Search Repository"
+                )
             }
-            .listStyle(.plain)
-            .navigationTitle("Search Repository")
-            .searchable(
-                text: $viewModel.searchText,
-                placement: .sidebar,
-                prompt: "Search Repository"
-            )
+
         }
     }
 }
